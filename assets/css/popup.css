@@ -1,0 +1,90 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    /* overflow-y: auto; */
+    overflow: hidden;
+    transition: all 0.8s ease 0s;
+    background: rgba(0, 0, 0, 0.75)
+}
+
+.popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    width: 100%;
+    padding: 15px;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.callback-modal__column {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: clamp(3.0625rem, 2.6798rem + 1.3605vw, 4.3125rem) clamp(0.625rem, -0.0446rem + 2.381vw, 2.8125rem) clamp(2.625rem, 2.2232rem + 1.4286vw, 3.9375rem);
+}
+
+.callback-modal__title {
+    font-family: DIN Pro Medium;
+    font-size: clamp(0.875rem, 0.7411rem + 0.4762vw, 1.3125rem);
+    font-weight: 500;
+    line-height: clamp(1.25rem, 1.0778rem + 0.6122vw, 1.8125rem);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.callback-modal__subtitle {
+    font-size: clamp(0.875rem, 0.7411rem + 0.4762vw, 1.3125rem);
+    font-weight: 300;
+    line-height: clamp(1.25rem, 1.0778rem + 0.6122vw, 1.8125rem);
+    text-align: center;
+    margin-bottom: clamp(1.5625rem, 1.2946rem + 0.9524vw, 2.4375rem);
+}
+
+.callback-modal__column .callback_form {
+    padding: 0;
+    gap: 0;
+}
+
+.popup__close {
+    position: absolute;
+    top: 33px;
+    right: 37px;
+}
+
+.callback-modal__input-1 {
+    margin-bottom: clamp(1.5625rem, 1.4668rem + 0.3401vw, 1.875rem);
+}
+
+.callback-modal__input-2 {
+    margin-bottom: clamp(1.5625rem, 1.3712rem + 0.6803vw, 2.1875rem);
+}
+
+.callback-modal__column .callback_form input {
+    padding: 18px 10px;
+    font-size: 20px;
+    line-height: 24.78px;
+    height: 49px;
+}
+
+
+@media (max-width: 768px) { 
+    
+    .popup__close {
+        position: absolute;
+        top: 22px;
+        right: 18px;
+    }
+}
+
