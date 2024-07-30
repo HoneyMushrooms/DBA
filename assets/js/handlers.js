@@ -60,12 +60,66 @@ groups.forEach(group => {
     updateInput();
 });
 
-const header = document.getElementById('header');
+const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
-        header.classList.add('scrolled');
+        header.classList.add('scroll');
     } else {
-        header.classList.remove('scrolled');
+        header.classList.remove('scroll');
     }
+});
+
+const Menu = () => {
+    document.querySelector('.dropdown-menu').classList.toggle('active');
+    document.querySelector('.header__dropdown-btn').classList.toggle('active');
+}
+
+document.querySelector('.header__dropdown-btn').addEventListener('click', Menu);
+
+const burgerButton = document.querySelector('.header__burger');
+const burgerSvg = document.querySelector('svg');
+const mobileNav = document.querySelector('.mobile-nav');
+
+const burgerMenu = () => {
+
+    document.querySelector('.header__burger').addEventListener('click', function() {
+        svgIcon.innerHTML = '<path d="M18.5 18.5L5 5M18.5 5L5 18.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
+    });
+    
+    if(mobileNav.classList.contains('mobile-nav_active')) {
+        mobileNav.classList.remove('mobile-nav_active');
+        burgerSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H20.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6ZM3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12ZM3 18C3 17.5858 3.33579 17.25 3.75 17.25H20.25C20.6642 17.25 21 17.5858 21 18C21 18.4142 20.6642 18.75 20.25 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z" fill="white"/>';
+    } else {
+        mobileNav.classList.add('mobile-nav_active');
+        burgerSvg.innerHTML = '<path d="M18.5 18.5L5 5M18.5 5L5 18.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
+    }
+
+
+}
+
+burgerButton.addEventListener('click', burgerMenu);
+
+document.querySelectorAll('[data-goto]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetElement = document.querySelector(this.getAttribute('data-goto'));
+        const openMenu = document.querySelector('.dropdown-menu.active');
+        const openMenuMobile = document.querySelector('.mobile-nav.mobile-nav_active');
+
+        if(openMenu) {
+            Menu()
+        }
+        if(openMenuMobile) {
+            burgerMenu();
+        }
+
+        if (targetElement) {
+            window.scroll({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
