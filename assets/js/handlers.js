@@ -24,3 +24,48 @@ faqQuestion.forEach(function(link, index) {
         }
     });
 });
+
+const groups = document.querySelectorAll('.number-input__group');
+
+groups.forEach(group => {
+    const minusBtn = group.querySelector('.number-input__minus');
+    const plusBtn = group.querySelector('.number-input__plus');
+    const input = group.querySelector('.number-input__value');
+
+    function updateInput() {
+        let currentValue = parseInt(input.value);
+        if (currentValue <= 1) {
+            input.value = 1;
+            group.classList.remove('minus-active');
+        } else {
+            minusBtn.removeAttribute('disabled');
+            group.classList.add('minus-active');
+        }
+    }
+
+    minusBtn.addEventListener('click', () => {
+        let currentValue = parseInt(input.value);
+        if (currentValue > 1) {
+            input.value = currentValue - 1;
+            updateInput();
+        }
+    });
+
+    plusBtn.addEventListener('click', () => {
+        let currentValue = parseInt(input.value);
+        input.value = currentValue + 1;
+        updateInput();
+    });
+
+    updateInput();
+});
+
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});

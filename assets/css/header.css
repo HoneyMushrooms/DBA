@@ -1,143 +1,50 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
 }
 
-.header__container {
-    max-width: 1920px;
-    padding-left: clamp(0.9375rem, -1.1862rem + 7.551vw, 7.875rem);
-    padding-right: clamp(0.9375rem, -1.1288rem + 7.3469vw, 7.6875rem);
-    margin: 0 auto;
-}
-
 .header__row {
     padding-top: 30px;
+    padding-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
 }
 
-.header__nav ul {
+.header__group-1 {
     display: flex;
-    gap: 35px;
-}
-
-.header__link {
-    font-family: Din Pro Lite;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 16.11px;
-    color:rgba(53, 53, 53, 1);
-}
-
-@media (hover:hover) {
-    .header__link:hover {
-        color: rgba(232, 162, 145, 1);
-    }
-}
-
-.header__link.active {
-    color: rgba(232, 162, 145, 1);
-}
-
-.header__logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.header__group-main {
-    display: flex;
-    gap: 35px;
+    gap: 30px;
     align-items: center;
 }
 
-.header__group-svg {
+.header__group-2 {
     display: flex;
-    gap: 22.4px;
+    gap: 24px;
     align-items: center;
 }
 
-.header__group {
+.header__text {
     display: flex;
-    align-items: center;
-    gap: 93px;
+    flex-direction: column;
+}
+
+.header__text span {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
 }
 
 .header__btn {
-    border: 0.5px solid rgba(53, 53, 53, 1);
-    width: 169px;
-    height: 39px;
-    background-color: transparent;
-    border-radius: 3px;
-    font-family: Din Pro Lite;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 16.11px;
-    color:rgba(53, 53, 53, 1);
-    text-transform: uppercase;
+    padding: 21px 61px;
 }
 
-.header__burger {
-    display: none;
+.header__shop-btn {
+    padding: 6px;
 }
-
-@media (max-width: 1070px) {
-    .header__btn-like svg {
-        fill: rgba(53, 53, 53, 1);
-    }
-
-    .header__nav {
-        display: none;
-    }
-
-    .header__group,
-    .header__group-svg {
-        gap: 21.3px;
-    }
-
-    .header__burger {
-        display: block;
-    }
-
-    .header__logo {
-        position: relative;
-        left: 0;
-        transform: none;
-        width: 89px;
-        height: 31px;
-    }
-
-    .header__logo img {
-        width: 89px;
-        height: 31px;
-    }
-
-    .header__btn {
-        display: none;
-    }
-
-    .header__group-main svg {
-        width: 19px;
-        height: 19px;
-    }
-
-    .header__group-main {
-        gap: 21px;
-    }
-
-    .header__row {
-        padding-top: 19px;
-    }
-}
-
-
-
 
 
 
