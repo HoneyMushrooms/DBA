@@ -54,6 +54,7 @@
 
 .btn {
     font-size: 18px;
+    line-height: 18px;
     font-weight: 300;
     background-color: var(--blue-color);
     color: var(--white-color);
@@ -779,10 +780,16 @@
 
 .subscription__column input {
     width: 300px;
-    padding: clamp(1.125rem, 0.9545rem + 0.6061vw, 1.5rem) 20px;
+    padding: clamp(17px, 0.892rem + 0.61vw, 22px) 20px;
     border-radius: 100px;
     background-color: rgba(44, 44, 44, 1);
     color: var(--grey-color);
+    font-size: 12px;
+    border: 1px solid rgba(44, 44, 44, 1);
+}
+
+.subscription__column input:focus {
+    border-color: rgba(16, 81, 106, 1);
 }
 
 .subscription__column input::placeholder {
@@ -813,7 +820,11 @@
 
 .error-page, 
 .blog-page,
-.payment-page {
+.payment-page,
+.article-page,
+.policy-page,
+.partnership-page,
+.order-page {
     margin-top: 170px;
     margin-bottom: clamp(6.25rem, 4.8295rem + 5.0505vw, 9.375rem);
 }
@@ -983,18 +994,24 @@
     margin-bottom: 8px;
 }
 
-.payment-page ul {
+.payment-page ul,
+.article-page ul,
+.article-page ol {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.payment-page ul li {
+.payment-page ul li,
+.article-page ul li,
+.policy-page ul li {
     position: relative;
     padding-left: 25px;
 }
 
-.payment-page ul li::before {
+.payment-page ul li::before,
+.article-page ul li::before,
+.policy-page ul li::before {
     content: "";
     width: 3px;
     height: 3px;
@@ -1029,5 +1046,201 @@
 
     .payment__body {
         background-image: linear-gradient(111.92deg, #161616 0%, #1E1E1E 100%);
+    }
+}
+
+.article__block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.article__body img {
+    max-width: 624px;
+    max-height: 468px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article__body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(32px, 1.432rem + 2.02vw, 52px);
+}
+
+.article__column,
+.policy__column,
+.partnership-info__column {
+    gap: clamp(32px, 1.432rem + 2.02vw, 52px);
+    max-width: 624px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.article__group,
+.policy__group,
+.input-info__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.article-page ol {
+    padding-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .article__group,
+    .policy__group {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .article__body img {
+        height: 240px;
+    }
+}
+
+.policy__column h1 {
+    text-align: left;
+}
+
+.policy__column {
+    gap: 52px;
+}
+
+.policy__block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.policy__block-1 .h2-medium {
+    margin-bottom: 4px;
+}
+
+.policy__block-1 .body-xs {
+    margin-bottom: 16px;
+}
+
+.partnership-info__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.partnership-info__grid {
+    max-width: 624px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 24px;
+    grid-template-areas: "name phone" "email website" "comment-1 comment-1" "comment-2 comment-2" "income income" "btn btn";
+}
+
+#name {
+    grid-area: name;
+}
+
+#phone {
+    grid-area: phone;
+}
+
+#email {
+    grid-area: email;
+}
+
+#website {
+    grid-area: website;
+} 
+
+#comment-1 {
+    grid-area: comment-1;
+}
+
+#comment-2 {
+    grid-area: comment-2;
+}
+
+#income {
+    grid-area: income;
+}
+
+.input-info__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-info__group label {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.input-info__group sup {
+    color: rgba(210, 69, 90, 1);
+    position: relative;
+    top: 4px;
+    font-family: Helvetica Now Text ;
+    font-size: 14px;
+    line-height: 0;
+}
+
+.error {
+    display: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(210, 69, 90, 1);
+}
+
+.input-info__group input {
+    padding: 12px 20px;
+    border-radius: 100px;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background-color: rgba(44, 44, 44, 1);
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22.4px;
+}
+
+.input-info__group input::placeholder,
+.input-info__group textarea::placeholder {
+    color: var(--grey-color);    
+}
+
+.input-info__group input:focus,
+.input-info__group textarea:focus {
+    border-color: rgba(16, 81, 106, 1);
+}
+ 
+.input-info__group textarea {
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background-color: rgba(44, 44, 44, 1);
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22.4px;
+    resize: none;
+    height: 140px;
+}
+
+.partnership-info__btn {
+    grid-area: btn;
+    display: flex;
+    justify-content: center;
+    padding: 21px 0;
+}
+
+@media (max-width: 768px) {
+    .partnership-info__grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "name" "phone" "email" "website" "comment-1" "comment-2" "income" "btn";
     }
 }

@@ -17,7 +17,6 @@
 :focus, :active { outline: none; }
 a:focus, a:active { outline: none; }
 nav, footer, header, aside { display: block; }
-input, button, textarea { font-family: inherit; }
 input::-ms-clear { display: none; }
 button { cursor: pointer; }
 button::-moz-focus-inner { padding: 0; border: 0; }
@@ -26,18 +25,16 @@ a, a:visited, a:hover { text-decoration: none !important; }
 a:hover { text-decoration: none; }
 ul li { list-style: none !important; }
 img { vertical-align: top; }
-h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit;}
+/* input, button, textarea { font-family: inherit; } */
+/* h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit;} */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
-     -webkit-appearance: none;
-     border-radius: 0;
+
+textarea {
+  font-family: 'Helvetica Now Text', sans-serif;
 }
   
 html, body {
