@@ -542,7 +542,7 @@
                 <div class="partnership__column">
                     <div class="partnership__text">
                         <h2 class="h2-medium">Become our partner</h2>
-                        <p class="partnership__subtitle subtitle">Join the industry leader in brain supplements. Open up new opportunities for your business with our innovative products</p>
+                        <p class="partnership__subtitle subtitle-m">Join the industry leader in brain supplements. Open up new opportunities for your business with our innovative products</p>
                     </div>
                     <a href="#" class="btn">Become Partner</a>
                 </div>
@@ -554,10 +554,13 @@
                 <div class="subscription__column">
                     <div class="subscription__text">
                         <h2 class="h2-medium">Get ahead of the game</h2>
-                        <p class="subtitle">Be first for news, insight, discounts, offers. And 10% off your next order.</p>
+                        <p class="subtitle-m">Be first for news, insight, discounts, offers. And 10% off your next order.</p>
                     </div>
                     <form action="#" class="subscription__form">
-                        <input type="email" name="username" placeholder="your@email.com" required  oninvalid="this.setCustomValidity('This is a required field')" oninput="setCustomValidity('')" >
+                        <div class="subscription__input">
+                            <input type="email" name="username" placeholder="your@email.com" required  oninvalid="this.setCustomValidity('This is a required field')" oninput="setCustomValidity('')" >
+                            <span class="error-msg"></span>
+                        </div>
                         <button type="submit" class="subscription__btn btn">Subscribe</button>
                     </form>
                 </div>

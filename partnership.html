@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/popup.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
 
     <script defer src="./assets/js/handlers.js"></script>
+    <script defer src="./assets/js/popup.js"></script>
 </head>
 <body>
 
@@ -95,42 +97,42 @@
                 </div>
 
                 <form class="partnership-info__grid">
-                    <div class="input-info__group" id="name">
+                    <div class="input-info__group required" id="name">
                         <label>Name <sup>*</sup></label>
                         <input type="text" name="" placeholder="Enter Name">
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
-                    <div class="input-info__group" id="phone">
+                    <div class="input-info__group required" id="phone">
                         <label>Phone/Telegram <sup>*</sup></label>
                         <input type="text" name="" placeholder="Enter Number">
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
-                    <div class="input-info__group" id="email">
+                    <div class="input-info__group required " id="email">
                         <label>Email <sup>*</sup></label>
                         <input type="text" name="" placeholder="your@email.com">
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
                     <div class="input-info__group" id="website">
                         <label>Website</label>
                         <input type="text" name="" placeholder="https://www.yoyrwebsite">
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
-                    <div class="input-info__group" id="comment-1">
+                    <div class="input-info__group required" id="comment-1">
                         <label>Your Traffic Sources <sup>*</sup></label>
                         <textarea name="" placeholder="Enter Comment"></textarea>
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
                     <div class="input-info__group" id="comment-2">
                         <label>Ways of Product Promotion</label>
                         <textarea name="" placeholder="Enter Comment"></textarea>
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
                     <div class="input-info__group" id="income">
                         <label>Planned Monthly Income</label>
                         <input type="text" name="" placeholder="Enter the Amount">
-                        <span class="error"></span>
+                        <span class="error-msg"></span>
                     </div>
-                    <button class="partnership-info__btn btn">Send Request</button>
+                    <button class="partnership-info__btn btn disabled">Send Request</button>
                 </form>
             </div>
 
@@ -174,5 +176,20 @@
             </div>
         </div>
     </footer>
+    
+    <div id="parthership-popup" class="popup">
+        <div class="popup-container">
+            <div class="parthership-popup__column popup__body">
+                <a href="#" class="popup__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.5 18.5L5 5M18.5 5L5 18.5" stroke="#B7B7B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <h3 class="h3">Done</h3>
+                <p class="subtitle">Your data has been successfully sent. We will contact you soon </p> 
+                <a href="#" class="popup__close btn">Close</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

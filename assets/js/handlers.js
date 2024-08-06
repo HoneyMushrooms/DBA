@@ -1,4 +1,5 @@
 const faqQuestion = document.querySelectorAll('.faq__question');
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
 faqQuestion.forEach(function(link, index) {
     link.addEventListener('click', function(event) {
@@ -123,3 +124,76 @@ document.querySelectorAll('[data-goto]').forEach(anchor => {
         }
     });
 });
+
+if(document.querySelector('.partnership-page')) {
+    const requiredField = []
+    const requiredInputs = document.querySelectorAll('.input-info__group.required input');
+    const requiredTextareas = document.querySelectorAll('.input-info__group.required textarea');
+    const btn = document.querySelector('.partnership-info__btn.btn.disabled');
+    
+    requiredField.push(...requiredInputs, ...requiredTextareas);
+
+    requiredField.forEach(input => input.addEventListener('input', (event) => {
+        checkFields(requiredField, btn);
+    }))
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').querySelector('input').value.trim();
+
+        if(!EMAIL_REGEXP.test(email)) {
+            console.log(1)
+        }
+
+        const popup = document.getElementById('parthership-popup');
+        popupOpen(popup);
+    });
+}
+
+if(document.querySelector('.order-page')) {
+    const requiredField = []
+    const requiredInputs = document.querySelectorAll('.input-info__group.required input');
+    const requiredTextareas = document.querySelectorAll('.input-info__group.required textarea');
+    const btn = document.querySelector('.order__btn.btn.disabled');
+    
+    requiredField.push(...requiredInputs, ...requiredTextareas);
+
+    requiredField.forEach(input => input.addEventListener('input', (event) => {
+        checkFields(requiredField, btn);
+    }))
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').querySelector('input').value.trim();
+
+        if(!EMAIL_REGEXP.test(email)) {
+            document.getElementById('email').classList.add('error');
+            document.getElementById('email').querySelector('.error-msg').innerHTML = 'some text';
+            return;
+        }
+
+        const popup = document.getElementById('order-popup');
+        popupOpen(popup);
+    });
+}
+
+function checkFields(requiredField, btn) {
+    
+    let active = true;
+
+    requiredField.forEach(input => {
+        if (input.value.trim() === '') {
+            active = false;
+        }
+    });
+    
+    if(active) {
+        btn.classList.remove('disabled');
+    } else {
+        btn.classList.add('disabled');
+    }
+}
+
+// валидацию и показать ошибку
