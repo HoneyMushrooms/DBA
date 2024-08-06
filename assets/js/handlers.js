@@ -143,7 +143,9 @@ if(document.querySelector('.partnership-page')) {
         const email = document.getElementById('email').querySelector('input').value.trim();
 
         if(!EMAIL_REGEXP.test(email)) {
-            console.log(1)
+            document.getElementById('email').classList.add('error');
+            document.getElementById('email').querySelector('.error-msg').innerHTML = 'some error text';
+            return;
         }
 
         const popup = document.getElementById('parthership-popup');
@@ -170,7 +172,7 @@ if(document.querySelector('.order-page')) {
 
         if(!EMAIL_REGEXP.test(email)) {
             document.getElementById('email').classList.add('error');
-            document.getElementById('email').querySelector('.error-msg').innerHTML = 'some text';
+            document.getElementById('email').querySelector('.error-msg').innerHTML = 'some error text';
             return;
         }
 
