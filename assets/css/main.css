@@ -188,7 +188,7 @@
 
 .product__img img {
     width: 100%;
-    max-height: 340px;
+    height: 340px;
     object-fit: cover;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
@@ -680,8 +680,7 @@
 }
 
 .faq__qroup {
-    width: 100%;
-    padding: 24px; 
+    width: 100%; 
     display: flex;
     flex-direction: column;
     border-radius: 16px;
@@ -690,6 +689,7 @@
 }
 
 .faq__question {
+    padding: 24px;
     display: flex;
     justify-content: space-between;
     gap: 16px;
@@ -713,17 +713,18 @@
 }
 
 .faq__answer-text p {
-    padding-top: 24px;
+    padding: 0 24px 24px 24px;
     color: var(--white-color);
 }
 
 @media (max-width: 768px) {
-    .faq__qroup {
+    .faq__question {
         padding: 20px; 
     }
     
     .faq__answer-text p {
-        padding-top: 16px;
+        margin-top: -4px;
+        padding: 0 20px 20px 20px;
     }
 }
 
@@ -788,7 +789,7 @@
 
 .subscription__column input {
     width: 300px;
-    padding: clamp(17px, 0.892rem + 0.61vw, 22px) 20px;
+    padding: 22px 20px;
     border-radius: 100px;
     background-color: rgba(44, 44, 44, 1);
     color: var(--grey-color);
@@ -798,6 +799,7 @@
 
 .subscription__column input:focus {
     border-color: rgba(16, 81, 106, 1);
+    outline: none;
 }
 
 .subscription__column input::placeholder {
@@ -826,6 +828,18 @@
         flex-direction: column;
         max-width: 300px;
         width: 100%;
+    }
+
+    .subscription__input {
+        width: 100%;
+    }
+    
+    .subscription__btn {
+        width: 100%;
+    }
+
+    .subscription__column input {
+        padding: 17px 20px;
     }
 
     .subscription__column input {
@@ -1248,6 +1262,7 @@
 .input-info__group input:focus,
 .input-info__group textarea:focus {
     border-color: rgba(16, 81, 106, 1);
+    outline: none;
 }
  
 .input-info__group textarea {

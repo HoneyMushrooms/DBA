@@ -33,6 +33,12 @@ groups.forEach(group => {
     const plusBtn = group.querySelector('.number-input__plus');
     const input = group.querySelector('.number-input__value');
 
+    input.addEventListener('input', (e) => {
+        if(e.target.value == '') {
+            e.target.value = 1;
+        }
+    })
+
     function updateInput() {
         let currentValue = parseInt(input.value);
         if (currentValue <= 1) {
@@ -71,12 +77,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const Menu = () => {
+const menu = () => {
     document.querySelector('.dropdown-menu').classList.toggle('active');
     document.querySelector('.header__dropdown-btn').classList.toggle('active');
 }
 
-document.querySelector('.header__dropdown-btn').addEventListener('click', Menu);
+document.querySelector('.header__dropdown-btn').addEventListener('click', menu);
 
 const burgerButton = document.querySelector('.header__burger');
 const burgerSvg = document.querySelector('svg');
@@ -110,7 +116,7 @@ document.querySelectorAll('[data-goto]').forEach(anchor => {
         const openMenuMobile = document.querySelector('.mobile-nav.mobile-nav_active');
 
         if(openMenu) {
-            Menu()
+            menu();
         }
         if(openMenuMobile) {
             burgerMenu();
