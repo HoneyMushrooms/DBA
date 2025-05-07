@@ -2388,8 +2388,10 @@ input[type="radio"]:checked + .custom-radio {
 
 .product__back-img {
     position: absolute;
-    top: 30%;
+    top: 400px;
     left: -30%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 @media (max-width: 1200px) {
