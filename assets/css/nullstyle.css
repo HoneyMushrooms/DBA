@@ -1,21 +1,5 @@
-@font-face { font-family: 'Din Pro Lite'; src: url(../fonts/dinpro_light.otf); font-weight: 300; }
-@font-face { font-family: 'Din Pro Medium'; src: url(../fonts/dinpro_medium.otf); font-weight: 500; }
-@font-face { font-family: 'Cannonade'; src: url(../fonts/Cannonade.ttf); font-weight: 500; }
-
-@font-face {
-  font-family: 'PF Regal Display Pro';
-  src: local('PF Regal Display Pro Regular'), local('PF-Regal-Display-Pro-Regular'),
-      url('../fonts/PFRegalDisplayPro-Regular.woff2') format('woff2'),
-      url('../fonts/PFRegalDisplayPro-Regular.woff') format('woff'),
-      url('../fonts/PFRegalDisplayPro-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-* { padding: 0; margin: 0; border: 0; }
+* { padding: 0; margin: 0; border: 0; font-family: inherit; }
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-/* :focus, :active { outline: none; } */
-/* a:focus, a:active { outline: none; } */
 nav, footer, header, aside { display: block; }
 input::-ms-clear { display: none; }
 button { cursor: pointer; }
@@ -34,7 +18,7 @@ input[type="number"]::-webkit-inner-spin-button {
 textarea {
   font-family: 'Helvetica Now Text', sans-serif;
 }
-  
+
 html, body {
   width: 100%;
   line-height: 1;
@@ -71,5 +55,5 @@ footer {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
-  padding-inline: clamp(1rem, -0.8182rem + 6.4646vw, 5rem);
+  padding-inline: clamp(16px, -0.500rem + 7.50vw, 100px);
 }

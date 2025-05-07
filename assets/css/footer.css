@@ -1,13 +1,20 @@
 .footer__row {
     display: flex;
     justify-content: space-between;
-    padding: clamp(2rem, 1.3182rem + 2.4242vw, 3.5rem) 0;
+    padding: clamp(24px, 0.731rem + 3.08vw, 56px) 0;
+    min-height: 253px;
 }
 
 .footer__policy {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 24px;
+}
+
+.footer__logo img {
+    width: 152px;
+    height: 43px;
 }
 
 .footer__text {
@@ -81,7 +88,7 @@
 .footer__payments {
     display: flex;
     justify-content: end;
-    margin: 0 7.5px;
+    align-items: center;
     gap: 15px;
 }
 
@@ -101,12 +108,10 @@
     }
 
     .footer__nav {
-        gap: 32px;
+        gap: 24px;
     }
 
     .footer__payments {
         justify-content: start;
-        margin: 0 7.5px;
-        gap: 15px;
     }
 }

@@ -1,4 +1,5 @@
 const faqQuestion = document.querySelectorAll('.faq__question');
+const productQuestion = document.querySelectorAll('.product__question');
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
 faqQuestion.forEach(function(link, index) {
@@ -25,6 +26,23 @@ faqQuestion.forEach(function(link, index) {
         }
     });
 });
+
+productQuestion.forEach(function(link, index) {
+    link.addEventListener('click', function(event) {
+
+        const faqAnswer = this.nextElementSibling;
+        const arrow = this.querySelector('.product__arrow');
+        
+        if(faqAnswer.classList.contains('open')) {
+            faqAnswer.classList.remove('open');
+            arrow.classList.remove('rotated');
+        } else {
+            faqAnswer.classList.add('open');
+            arrow.classList.add('rotated');
+        }
+    });
+});
+
 
 const groups = document.querySelectorAll('.number-input__group');
 
@@ -90,10 +108,6 @@ const mobileNav = document.querySelector('.mobile-nav');
 
 const burgerMenu = () => {
 
-    document.querySelector('.header__burger').addEventListener('click', function() {
-        svgIcon.innerHTML = '<path d="M18.5 18.5L5 5M18.5 5L5 18.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
-    });
-    
     if(mobileNav.classList.contains('mobile-nav_active')) {
         mobileNav.classList.remove('mobile-nav_active');
         burgerSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H20.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6ZM3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12ZM3 18C3 17.5858 3.33579 17.25 3.75 17.25H20.25C20.6642 17.25 21 17.5858 21 18C21 18.4142 20.6642 18.75 20.25 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z" fill="white"/>';
@@ -101,8 +115,6 @@ const burgerMenu = () => {
         mobileNav.classList.add('mobile-nav_active');
         burgerSvg.innerHTML = '<path d="M18.5 18.5L5 5M18.5 5L5 18.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
     }
-
-
 }
 
 burgerButton.addEventListener('click', burgerMenu);
