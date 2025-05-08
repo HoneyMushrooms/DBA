@@ -86,12 +86,21 @@ groups.forEach(group => {
 });
 
 const header = document.querySelector('header');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const dropdownBtn = document.querySelector('.header__dropdown-btn');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        header.classList.add('scroll');
-    } else {
-        header.classList.remove('scroll');
+
+    // if (window.scrollY > 0) {
+    //     header.classList.add('scroll');
+    // } else {
+    //     header.classList.remove('scroll');
+    // }
+
+    if (mobileNav.classList.contains('mobile-nav_active')) {
+        mobileNav.classList.remove('mobile-nav_active');
+        burgerSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H20.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6ZM3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12ZM3 18C3 17.5858 3.33579 17.25 3.75 17.25H20.25C20.6642 17.25 21 17.5858 21 18C21 18.4142 20.6642 18.75 20.25 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z" fill="white"/>';
+        header.classList.remove('active');
     }
 });
 
@@ -107,7 +116,7 @@ const burgerSvg = document.querySelector('svg');
 const mobileNav = document.querySelector('.mobile-nav');
 
 const burgerMenu = () => {
-
+    document.querySelector('.header').classList.toggle('active')
     if(mobileNav.classList.contains('mobile-nav_active')) {
         mobileNav.classList.remove('mobile-nav_active');
         burgerSvg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H20.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6ZM3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12ZM3 18C3 17.5858 3.33579 17.25 3.75 17.25H20.25C20.6642 17.25 21 17.5858 21 18C21 18.4142 20.6642 18.75 20.25 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z" fill="white"/>';

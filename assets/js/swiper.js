@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const productThumbsSlider = new Swiper(".product__thumb-slider", {
       spaceBetween: 11,
-      slidesPerView: 5,
+      slidesPerView: 'auto',
       freeMode: true,
       watchSlidesProgress: true,
 	});
